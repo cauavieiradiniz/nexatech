@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NexaTech | Soluções Digitais</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 25px;
+        }
+
+        .notice {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #38bdf8;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .mission {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .values {
+            background: #eef4ff;
+        }
+
+        .values .card {
+            background: #ffffff;
+        }
+
+        .partners {
+            text-align: center;
+        }
+
+        .partner-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .partner {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+        }
+
+        .location {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .location .section-title h2 {
+            color: white;
+        }
+
+        .location .section-title p {
+            color: #cbd5e1;
+        }
+
+        .location-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .location-box img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Nexa<span>Tech</span></div>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#parceiros">Parceiros</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Inovação que <span>conecta</span></h1>
+
+                <p>
+                    Soluções digitais simples, eficientes e acessíveis
+                    para transformar ideias em resultados.
+                </p>
+
+                <div class="notice">
+                    Empresa fictícia criada exclusivamente para fins acadêmicos.
+                </div>
+
+                <br>
+
+                <a href="#sobre" class="button">Conheça a NexaTech</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="section-title">
+                <h2>Sobre a NexaTech</h2>
+                <p>Conheça nossa empresa</p>
+            </div>
+
+            <div class="about">
+                <p>
+                    A NexaTech é uma empresa fictícia de tecnologia
+                    especializada no desenvolvimento de soluções digitais
+                    para empresas.
+                </p>
+
+                <br>
+
+                <p>
+                    Nosso objetivo é utilizar a tecnologia para simplificar
+                    processos, melhorar experiências e ajudar empresas a
+                    alcançar seus objetivos.
+                </p>
+            </div>
+        </section>
+
+        <section class="mission">
+            <div class="section-title">
+                <h2>Missão</h2>
+            </div>
+
+            <div class="about">
+                <p>
+                    Desenvolver soluções digitais simples, eficientes e
+                    acessíveis, ajudando empresas a utilizar a tecnologia
+                    para melhorar seus processos e alcançar seus objetivos.
+                </p>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="section-title">
+                <h2>Nossos Serviços</h2>
+                <p>Soluções pensadas para diferentes necessidades</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>
+                        Criação de sites modernos, responsivos e funcionais
+                        para empresas.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Sistemas Personalizados</h3>
+                    <p>
+                        Desenvolvimento de sistemas de acordo com as
+                        necessidades de cada cliente.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Suporte e Manutenção</h3>
+                    <p>
+                        Atualização, manutenção e suporte para sites e
+                        sistemas digitais.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="values">
+            <div class="section-title">
+                <h2>Nossos Valores</h2>
+                <p>Princípios que orientam nosso trabalho</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Inovação</h3>
+                    <p>Buscar novas ideias e soluções.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Qualidade</h3>
+                    <p>Entregar serviços eficientes e bem desenvolvidos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Transparência</h3>
+                    <p>Manter uma comunicação clara com os clientes.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Responsabilidade</h3>
+                    <p>Utilizar a tecnologia de forma ética e consciente.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Acessibilidade</h3>
+                    <p>Criar soluções simples e fáceis de utilizar.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="parceiros" class="partners">
+            <div class="section-title">
+                <h2>Parceiros</h2>
+                <p>Parceiros fictícios criados exclusivamente para fins acadêmicos.</p>
+            </div>
+
+            <div class="partner-list">
+                <div class="partner">TechWave Solutions</div>
+                <div class="partner">CodeLink</div>
+                <div class="partner">ByteCore</div>
+            </div>
+        </section>
+
+        <section class="location">
+            <div class="section-title">
+                <h2>Nosso Local</h2>
+                <p>
+                    Endereço fictício criado exclusivamente para fins acadêmicos.
+                </p>
+            </div>
+
+            <div class="location-box">
+                <p>
+                    Avenida da Tecnologia, 1000 — Centro,
+                    São Paulo — SP
+                </p>
+
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80"
+                    alt="Escritório moderno representando a sede fictícia da NexaTech">
+            </div>
+        </section>
+
+        <section id="contato" class="contact">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Fale com a NexaTech</p>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>E-mail:</strong> contato@nexatech.example</p>
+                <p><strong>Telefone:</strong> (11) 0000-0000</p>
+                <p><strong>Horário:</strong> Segunda a sexta, das 9h às 18h</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            © 2026 NexaTech — Empresa fictícia criada para fins acadêmicos.
+        </p>
+    </footer>
+
+</body>
+</html>
